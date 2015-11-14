@@ -1,0 +1,33 @@
+// test #spec-one
+var x;
+var y
+var z = function{
+}
+
+// test #spec-two A
+var white;
+var whiteNoSemi
+
+// test #spec-three
+var correctBrackets {
+}
+var wrongBrackets1 {}
+var wrongBrackets2
+{
+}
+
+// test #spec-four
+x == y;
+x === y;
+
+// test #spec-five
+'This is right';
+"This is wrong";
+"A Cat's cats";
+
+// test #spec-six
+var single;
+var one; var two;
+this line is going to exceed the constraint of 80 characters per line because it  will throw an error in the linter which is what spec-six is meant to test for.
+
+// test #spec-two B
