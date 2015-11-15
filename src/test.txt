@@ -1,7 +1,7 @@
 // test #spec-one
 var x;
 var y
-var z = function{
+var z = function {
 }
 
 // test #spec-two A
@@ -29,5 +29,3 @@ x === y;
 var single;
 var one; var two;
 this line is going to exceed the constraint of 80 characters per line because it  will throw an error in the linter which is what spec-six is meant to test for.
-
-// test #spec-two B
