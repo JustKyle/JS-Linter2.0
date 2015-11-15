@@ -23,6 +23,10 @@ with open(sys.argv[1], 'r') as js:
         if(re.match(".*\".*\"", line)):
             if "'" not in line:
                 print("%d. Should use single quotes." % lineNum)
+        if(re.match("^.*[\;|\}].{2,}", line)):
+            print("%d. Use only one statement per line." % lineNum)
+        if(len(line) > 80):
+            print("%d. Lines should not be longer than 80 characters." % lineNum)
         lastLine = line
     if(not re.match(".*\\n$", lastLine)):
         print("%d. File %s should end with a newline character." % (lineNum, sys.argv[1]))
