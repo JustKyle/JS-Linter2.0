@@ -13,11 +13,13 @@ with open(sys.argv[1], 'r') as js:
         if(not re.match(".*[^\s+]$", line)):
             print("%d. Statement should not have trailing whitespace." % lineNum)
         if '{' in line:
-            if(not re.match(".+\{\\n$",line)):
+            if(not re.match(".+\{\\n$", line)):
                 print("%d. Open curly brace should not stand-alone." % lineNum)
         if '}' in line:
             if(not re.match("\}\\n$", line)):
-                print("%d . Closing curly brace should stand-alone." % lineNum)
+                print("%d. Closing curly brace should stand-alone." % lineNum)
+        if(re.match(".+(?<!=)==(?!=).+", line)):
+            print("%d. Should only use strict equality." % lineNum)
         lastLine = line
     if(not re.match(".*\\n$", lastLine)):
         print("%d. File %s should end with a newline character." % (lineNum, sys.argv[1]))
